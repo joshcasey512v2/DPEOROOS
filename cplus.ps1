@@ -65,7 +65,7 @@ foreach ($exercise in $exerciseFiles) {
     $done = $completed.Count
     $total = $exerciseFiles.Count
     $percent = [math]::Round(($done / $total) * 100)
-    Write-Host "`nProgress: $done / $total ($percent`%)"
+    Write-Host "`nProgress: $done / $total ($percent%)"
 }
 
 if ($completed.Count -eq $exerciseFiles.Count) {
