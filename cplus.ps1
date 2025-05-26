@@ -1,5 +1,15 @@
+param (
+    [switch]$reset
+)
+
 $exerciseFiles = Get-ChildItem -Path "exercises" -Filter *.cpp | Sort-Object Name
 $progressFile = "progress.json"
+
+
+if ($reset) {
+    '{"completed": []}' | Out-File progress.json -Encoding UTF8
+    Write-Host "Progress reset!"
+}
 
 if (!(Test-Path $progressFile)) {
     '{"completed": []}' | Out-File $progressFile -Encoding UTF8
