@@ -1,7 +1,6 @@
 ﻿{
     "completed":  [
-                      "singleton.cpp",
-                      "types.cpp",
-                      "functions.cpp"
+                      "functions.cpp",
+                      "singleton.cpp"
                   ]
 }
