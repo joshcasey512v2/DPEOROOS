@@ -1,6 +1,7 @@
 ﻿{
     "completed":  [
                       "functions.cpp",
-                      "singleton.cpp"
+                      "singleton.cpp",
+                      "oop.cpp"
                   ]
 }
