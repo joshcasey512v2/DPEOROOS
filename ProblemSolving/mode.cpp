@@ -23,8 +23,10 @@ int main(int argc, char const *argv[])
     for (int i = 0; i < ARRAR_SIZE; i++)
     {
         currentFrequent++;
+        // While the data is the same or we dont reach the last element, resert the current frequency
         if (surveryData[i] != surveryData[i + 1] || i == ARRAR_SIZE -1)
         {
+            // Set a new highest frequency if found
             if (currentFrequent > highestFrequent)
             {
                 highestFrequent = currentFrequent;
