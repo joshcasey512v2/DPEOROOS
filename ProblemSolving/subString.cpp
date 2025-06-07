@@ -39,5 +39,6 @@ int main(int argc, char const *argv[])
     }
     cout << endl;
     
+    delete[] test;
     return 0;
 }
