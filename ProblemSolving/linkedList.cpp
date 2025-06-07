@@ -9,8 +9,8 @@ struct listNode {
 
 typedef listNode *studentCollection;
 
-// Adding a Node
-// as we are changing sc we add it as a reference parameter &sc
+// Adding a Node to the start of the Linked List
+// As we are changing sc we add it as a reference parameter &sc
 void addRecord(studentCollection &sc, int studentNum, int grade){
     listNode *newNode = new listNode;
     newNode->studentNum = studentNum;
@@ -22,8 +22,13 @@ void addRecord(studentCollection &sc, int studentNum, int grade){
 // Traversing a Linked List
 // Average Grade
 double averageGrade(studentCollection sc){
+    // Edge case
+    if (sc == NULL) return 0;
+    
+    // Maintain a count for every element we come across
     int count = 0;
     int sum = 0;
+    // Assign a pointer to the head of the list
     listNode *loopPtr = sc;
     while (loopPtr != NULL)
     {
@@ -41,12 +46,15 @@ int main(int argc, char const *argv[])
     listNode *node1 = new listNode;
     node1->studentNum = 1;
     node1->grade = 90;
+
     listNode *node2 = new listNode;
     node2->studentNum = 2;
     node2->grade = 89;
+
     listNode *node3 = new listNode;
     node3->studentNum = 3;
     node3->grade = 84;
+
     sc = node1;
     node1->next = node2;
     node2->next = node3;
