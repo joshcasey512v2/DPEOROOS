@@ -73,10 +73,13 @@ bool studentRecord::isValidGrade(int grade){
 class studentCollection {
 public:
     studentCollection();
+    studentCollection(const studentCollection &original);
     ~studentCollection();
     void addRecord(studentRecord newStudent);
     studentRecord recordWithNumber(int idNum);
     void removeRecord(int idNum);
+    // Operator overload
+    studentCollection &operator=(const studentCollection &rhs);
 
 private:
 
@@ -90,6 +93,22 @@ private:
     void deleteList(studentList &listPtr);
     studentList copiedList(const studentList original);
 };
+
+studentCollection::studentCollection(const studentCollection &original){
+    _listHead = copiedList(original._listHead);
+}
+
+// Operator overload example
+studentCollection &studentCollection::operator=(const studentCollection &rhs){
+    // Ensure lhs isnt the same as the rhs (s1 = s1)
+    if (this != &rhs)
+    {
+        deleteList(_listHead);
+        _listHead = copiedList(rhs._listHead);
+    }
+    return *this;
+    
+}
 
 studentCollection::studentCollection(){
     _listHead = NULL;
