@@ -116,3 +116,11 @@ studentCollection::studentList studentCollection::copiedList(const studentList o
     return newList;
 }
 ```
+
+---
+## Mistakes to avoid
+### The Fake Class
+- A class with no coherent design
+- Syntactically correct but has no real meaning
+### Single Taskers
+- Does one task well but dont do anything else
